@@ -37,7 +37,7 @@ const ContactForm = () => {
           Start Your Journey
         </h1>
         <p className="text-lg mb-8 text-center">
-          We don't just take you home, we get you up and running.
+          We don&apos;t just take you home, we get you up and running.
         </p>
 
         <form onSubmit={handleSubmit} className="space-y-6">
@@ -106,48 +106,6 @@ const ContactForm = () => {
   );
 };
 
-export const HeroText = () => {
-  return (
-    <section className="bg-white py-16 px-4 md:px-20 text-center text-[#343616]">
-      <h1 className="text-4xl md:text-6xl font-serif font-medium mb-6">
-        Nigeria like you have never seen it
-      </h1>
-
-      <p className="max-w-3xl mx-auto mb-6 text-lg md:text-xl">
-        <strong>Káàbò</strong>, meaning ‘you are welcome’ in Yorùbá, is a
-        premier travel consulting and concierge service that{" "}
-        <strong className="font-semibold">
-          offers personalized, immersive experiences of Nigeria for travelers
-          from all walks of life
-        </strong>
-        .
-      </p>
-
-      <p className="max-w-3xl mx-auto mb-6 text-base md:text-lg">
-        We work closely with you to understand your interests and preferences,
-        using this insight to develop a bespoke program tailored specifically to
-        your group. Over the course of your stay, you’ll experience Nigeria’s
-        culture, industries, and heritage. From accommodations, transportation,
-        and meals to exclusive access to events and local industry leaders,{" "}
-        <strong className="font-semibold">
-          every detail is handled seamlessly by the Káàbò team
-        </strong>
-        .
-      </p>
-
-      <p className="max-w-3xl mx-auto text-base md:text-lg">
-        Our all-inclusive packages ensure that by the time you leave, you’ll not
-        only have unforgettable memories but also the confidence and to navigate
-        and explore Nigeria on your own for future visits.{" "}
-        <strong className="font-semibold">
-          Káàbò opens the doors to a Nigeria you’ve never seen before
-        </strong>
-        .
-      </p>
-    </section>
-  );
-};
-
 const PastExperiences = () => {
   return (
     <section className="flex flex-col md:flex-row min-h-screen bg-[#f6edda]">
@@ -182,14 +140,14 @@ const PastExperiences = () => {
         {/* Scrollable Testimonial Text */}
         <div className="max-w-2xl mx-auto text-center italic text-lg space-y-4">
           <p>
-            "My experience with Káàbò was transformative to say the least. Every
-            day was a new adventure – we met the most inspiring entrepreneurs, I
-            learned about so many different sectors..."
+            &quot;My experience with Káàbò was transformative to say the least.
+            Every day was a new adventure – we met the most inspiring
+            entrepreneurs, I learned about so many different sectors...&quot;
           </p>
           <p>
-            "...and of course I can’t leave out how much amazing Nigerian food
-            we ate. Káàbò bridges the gap between business and cultural
-            exploration, making it a must for anyone..."
+            &quot;...and of course I can’t leave out how much amazing Nigerian
+            food we ate. Káàbò bridges the gap between business and cultural
+            exploration, making it a must for anyone...&quot;
           </p>
         </div>
       </div>
@@ -223,7 +181,44 @@ export default function Home() {
 
         {/* herpotext */}
 
-        <HeroText />
+        <section className="bg-white py-16 px-4 md:px-20 text-center text-[#343616]">
+          <h1 className="text-4xl md:text-6xl font-serif font-medium mb-6">
+            Nigeria like you have never seen it
+          </h1>
+
+          <p className="max-w-3xl mx-auto mb-6 text-lg md:text-xl">
+            <strong>Káàbò</strong>, meaning ‘you are welcome’ in Yorùbá, is a
+            premier travel consulting and concierge service that{" "}
+            <strong className="font-semibold">
+              offers personalized, immersive experiences of Nigeria for
+              travelers from all walks of life
+            </strong>
+            .
+          </p>
+
+          <p className="max-w-3xl mx-auto mb-6 text-base md:text-lg">
+            We work closely with you to understand your interests and
+            preferences, using this insight to develop a bespoke program
+            tailored specifically to your group. Over the course of your stay,
+            you’ll experience Nigeria’s culture, industries, and heritage. From
+            accommodations, transportation, and meals to exclusive access to
+            events and local industry leaders,{" "}
+            <strong className="font-semibold">
+              every detail is handled seamlessly by the Káàbò team
+            </strong>
+            .
+          </p>
+
+          <p className="max-w-3xl mx-auto text-base md:text-lg">
+            Our all-inclusive packages ensure that by the time you leave, you’ll
+            not only have unforgettable memories but also the confidence and to
+            navigate and explore Nigeria on your own for future visits.{" "}
+            <strong className="font-semibold">
+              Káàbò opens the doors to a Nigeria you’ve never seen before
+            </strong>
+            .
+          </p>
+        </section>
         <PastExperiences />
         <ContactForm />
       </main>
