@@ -56,7 +56,7 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       <div
-        className={`md:hidden absolute w-full bg-green-600 text-white transition-all duration-300 ease-in-out overflow-hidden ${
+        className={`md:hidden absolute w-full bg-[#3C4220] z-[111111111] text-white transition-all duration-300 ease-in-out overflow-hidden ${
           isOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
         }`}
       >
