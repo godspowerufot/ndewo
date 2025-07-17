@@ -19,7 +19,7 @@ const Navbar = () => {
         {/* Desktop Menu */}
         <ul className="hidden md:flex space-x-8 items-center">
           <li>
-            <Link href="#" className="hover:underline">
+            <Link href="/" className="hover:underline">
               Home
             </Link>
           </li>
@@ -29,7 +29,7 @@ const Navbar = () => {
             </Link>
           </li>
           <li>
-            <Link href="#" className="hover:underline">
+            <Link href="/vision" className="hover:underline">
               Our Vision
             </Link>
           </li>
