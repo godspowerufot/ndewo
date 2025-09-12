@@ -2,6 +2,8 @@
 // components/ContactForm.jsx
 
 import React, { useState } from "react";
+import { motion } from "framer-motion";
+import PastExperiences from "./component/ui/pastexperience";
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -30,19 +32,37 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="bg-[#f6edda] w-full relative flex items-center justify-center min-h-screen bg-cover bg-center">
-      {/* Form container with white background and black text */}
-      <div className="relative z-10 p-8 md:p-12 bg-white text-black rounded-lg max-w-xl w-full mx-4 shadow-lg">
-        <h1 className="text-4xl md:text-5xl font-serif mb-4 text-center">
+    <div
+      className="bg-[#f6edda] w-full relative flex items-center justify-center min-h-screen bg-cover bg-center"
+      style={{
+        backgroundImage: `url('/wallpaper.jpg')`, // ✅ Add your background image here
+      }}
+    >
+      {/* Overlay for readability */}
+      <div className="absolute inset-0 bg-black/40"></div>
+
+      {/* Form container */}
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        viewport={{ once: true }}
+        className="relative z-10 p-8 my-8 bg-white h-fit md:p-12  backdrop-blur-md text-black rounded-xl max-w-3xl w-full mx-4 shadow-xl"
+      >
+        <h1 className="text-4xl md:text-5xl font-serif mb-4 text-center text-[#2e2f1f] drop-shadow-sm">
           Start Your Journey
         </h1>
-        <p className="text-lg mb-8 text-center">
+        <p className="text-lg mb-8 text-center text-gray-700">
           We don&apos;t just take you home, we get you up and running.
         </p>
 
         <form onSubmit={handleSubmit} className="space-y-6">
+          {/* Full Name */}
           <div>
-            <label htmlFor="fullName" className="sr-only">
+            <label
+              htmlFor="fullName"
+              className="block text-sm font-medium text-gray-700 mb-2"
+            >
               Full Name
             </label>
             <input
@@ -51,15 +71,19 @@ const ContactForm = () => {
               name="fullName"
               value={formData.fullName}
               onChange={handleChange}
-              placeholder="Full Name"
-              className="w-full p-4 text-lg bg-white border border-gray-500 rounded-md focus:outline-none focus:ring-2 focus:ring-green-600 text-black placeholder-gray-500"
+              placeholder="Enter your full name"
+              className="w-full p-4 text-lg bg-white border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-600 shadow-sm transition-all"
               required
             />
           </div>
 
+          {/* Email */}
           <div>
-            <label htmlFor="email" className="sr-only">
-              Email
+            <label
+              htmlFor="email"
+              className="block text-sm font-medium text-gray-700 mb-2"
+            >
+              Email Address
             </label>
             <input
               type="email"
@@ -67,91 +91,44 @@ const ContactForm = () => {
               name="email"
               value={formData.email}
               onChange={handleChange}
-              placeholder="Email"
-              className="w-full p-4 text-lg bg-white border border-gray-500 rounded-md focus:outline-none focus:ring-2 focus:ring-green-600 text-black placeholder-gray-500"
+              placeholder="Enter your email"
+              className="w-full p-4 text-lg bg-white border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-600 shadow-sm transition-all"
               required
             />
           </div>
 
+          {/* Message */}
           <div>
-            <label htmlFor="message" className="sr-only">
-              Message
+            <label
+              htmlFor="message"
+              className="block text-sm font-medium text-gray-700 mb-2"
+            >
+              Your Message
             </label>
             <textarea
               id="message"
               name="message"
               value={formData.message}
               onChange={handleChange}
-              placeholder="Message"
+              placeholder="Write your message..."
               rows="6"
-              className="w-full p-4 text-lg bg-white border border-gray-500 rounded-md focus:outline-none focus:ring-2 focus:ring-green-600 text-black placeholder-gray-500 resize-y"
+              className="w-full p-4 text-lg bg-white border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-600 shadow-sm transition-all resize-y"
               required
             ></textarea>
           </div>
 
-          <button
+          {/* Submit Button */}
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
             type="submit"
-            className="w-full border border-green-700 text-green-700 hover:bg-green-100 font-semibold py-4 px-6 rounded-md text-lg transition duration-300 ease-in-out"
+            className="w-full bg-green-700 text-white hover:bg-green-800 font-semibold py-4 px-6 rounded-md text-lg shadow-md transition-all"
           >
-            Send
-          </button>
+            Send Message
+          </motion.button>
         </form>
-      </div>
-
-      {/* Accessibility Icon */}
-      <div className="absolute top-4 right-4 bg-orange-500 text-white p-3 rounded-full shadow-lg cursor-pointer">
-        <span className="text-2xl font-bold">♀</span>
-      </div>
+      </motion.div>
     </div>
-  );
-};
-
-const PastExperiences = () => {
-  return (
-    <section className="flex flex-col md:flex-row min-h-screen bg-[#f6edda]">
-      {/* Sticky Left Side */}
-      <div className="w-full md:w-1/2 h-[60vh] md:h-auto sticky top-0 left-0 z-10 bg-black">
-        <div
-          className="w-full h-full bg-cover bg-center"
-          style={{ backgroundImage: `url('/your-image.jpg')` }}
-        />
-      </div>
-
-      {/* Right Scrollable Section */}
-      <div className="w-full md:w-1/2 px-6 py-12 space-y-12 text-[#5a2f1f]">
-        <h2 className="text-4xl md:text-5xl font-serif font-semibold text-center">
-          Past Experiences
-        </h2>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {[1, 2, 3].map((_, index) => (
-            <video
-              key={index}
-              className="w-full rounded-lg shadow-md"
-              controls
-              poster={`/thumbnail${index + 1}.jpg`} // optional preview image
-            >
-              <source src={`/video${index + 1}.mp4`} type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-          ))}
-        </div>
-
-        {/* Scrollable Testimonial Text */}
-        <div className="max-w-2xl mx-auto text-center italic text-lg space-y-4">
-          <p>
-            &quot;My experience with Káàbò was transformative to say the least.
-            Every day was a new adventure – we met the most inspiring
-            entrepreneurs, I learned about so many different sectors...&quot;
-          </p>
-          <p>
-            &quot;...and of course I can’t leave out how much amazing Nigerian
-            food we ate. Káàbò bridges the gap between business and cultural
-            exploration, making it a must for anyone...&quot;
-          </p>
-        </div>
-      </div>
-    </section>
   );
 };
 
@@ -164,60 +141,73 @@ export default function Home() {
           <div
             className="absolute inset-0 bg-cover bg-center z-0"
             style={{
-              backgroundImage: `url('/path-to-your-image.jpg')`, // Replace with your actual image path
+              backgroundImage: `url('/safari.jpg')`, // Replace with your actual image path
             }}
           ></div>
 
           {/* Overlay */}
-          <div className="absolute inset-0 bg-black bg-opacity-50 z-10"></div>
+          <div className="absolute inset-0 bg-[#00000063] bg-opacity-50 z-10"></div>
 
           {/* Text */}
-          <div className="relative z-20 flex items-center justify-center h-full">
-            <h1 className="text-white text-4xl md:text-6xl font-bold text-center">
-              Lorem Ipsum
-            </h1>
+          <div className="relative z-20 flex items-center justify-center flex-col h-full">
+            <motion.h1
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 1, ease: "easeOut" }}
+              className="text-white text-4xl md:text-8xl font-bold text-center"
+            >
+              Welcome to Ndewo Africa
+            </motion.h1>
+
+            <motion.h2
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 1, ease: "easeOut", delay: 0.3 }}
+              className="text-white text-2xl md:text-3xl mt-4 text-center"
+            >
+              Your Gateway to Authentic African Experience
+            </motion.h2>
           </div>
         </header>
 
         {/* herpotext */}
 
         <section className="bg-white py-16 px-4 md:px-20 text-center text-[#343616]">
-          <h1 className="text-4xl md:text-6xl font-serif font-medium mb-6">
-            Nigeria like you have never seen it
-          </h1>
+          <div className="text-center px-6">
+            <motion.h1
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              viewport={{ once: true }}
+              className="text-4xl md:text-6xl font-serif font-medium mb-6"
+            >
+              Ndewo Africa
+            </motion.h1>
 
-          <p className="max-w-3xl mx-auto mb-6 text-lg md:text-xl">
-            <strong>Káàbò</strong>, meaning ‘you are welcome’ in Yorùbá, is a
-            premier travel consulting and concierge service that{" "}
-            <strong className="font-semibold">
-              offers personalized, immersive experiences of Nigeria for
-              travelers from all walks of life
-            </strong>
-            .
-          </p>
+            <motion.p
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+              viewport={{ once: true }}
+              className="max-w-3xl mx-auto mb-6 text-lg md:text-xl"
+            >
+              <strong>A</strong>, modern travel concierge and cultural immersion
+              brand rooted in authenticity, local connection, and unforgettable
+              discovery.
+            </motion.p>
 
-          <p className="max-w-3xl mx-auto mb-6 text-base md:text-lg">
-            We work closely with you to understand your interests and
-            preferences, using this insight to develop a bespoke program
-            tailored specifically to your group. Over the course of your stay,
-            you’ll experience Nigeria’s culture, industries, and heritage. From
-            accommodations, transportation, and meals to exclusive access to
-            events and local industry leaders,{" "}
-            <strong className="font-semibold">
-              every detail is handled seamlessly by the Káàbò team
-            </strong>
-            .
-          </p>
-
-          <p className="max-w-3xl mx-auto text-base md:text-lg">
-            Our all-inclusive packages ensure that by the time you leave, you’ll
-            not only have unforgettable memories but also the confidence and to
-            navigate and explore Nigeria on your own for future visits.{" "}
-            <strong className="font-semibold">
-              Káàbò opens the doors to a Nigeria you’ve never seen before
-            </strong>
-            .
-          </p>
+            <motion.p
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
+              viewport={{ once: true }}
+              className="max-w-3xl mx-auto mb-6 text-base md:text-lg"
+            >
+              Whether you&apos;re exploring for the first time or returning to
+              reconnect, we design experiences that bring you closer to the
+              heart of Nigeria—and beyond.
+            </motion.p>
+          </div>
         </section>
         <PastExperiences />
         <ContactForm />

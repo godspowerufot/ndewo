@@ -14,7 +14,7 @@ const Navbar = () => {
   return (
     <nav className="relative w-full px-5  bg-black text-white md:bg-transparent md:text-black">
       <div className="flex justify-between items-center px-4 py-4 md:py-6">
-        <div className="text-2xl font-bold">Kaábo</div>
+        <div className="text-2xl font-bold">Ndewo</div>
 
         {/* Desktop Menu */}
         <ul className="hidden md:flex space-x-8 items-center">
@@ -25,7 +25,7 @@ const Navbar = () => {
           </li>
           <li>
             <Link href="/experience" className="hover:underline">
-              The Káàbò Experience
+              The Ndewo Experience
             </Link>
           </li>
           <li>

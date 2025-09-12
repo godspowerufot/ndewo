@@ -1,9 +1,9 @@
 "use client";
 import React from "react";
 import { useState } from "react";
-import { motion } from "framer-motion";
 import { useEffect } from "react";
-
+import { motion, AnimatePresence } from "framer-motion";
+import { X } from "lucide-react";
 function PricingSection() {
   // Load Calendly widget script dynamically
   useEffect(() => {
@@ -21,7 +21,7 @@ function PricingSection() {
   const openCalendlyPopup = () => {
     if (window.Calendly) {
       window.Calendly.initPopupWidget({
-        url: "https://calendly.com/ufotgodspower8/consult-call", // ✅ Replace with your actual Calendly link
+        url: "https://calendly.com/faithazike/free-discovery-call-ndewo-africa", // ✅ Replace with your actual Calendly link
       });
     } else {
       alert("Calendly is still loading, please try again.");
@@ -32,83 +32,125 @@ function PricingSection() {
     <section className="bg-[#3C4220] text-white py-16 flex flex-col items-center">
       {/* Heading */}
       <div className="text-center max-w-2xl">
-        <p className="mb-4">
-          Get the full Kàbọ̀ experience with our all-inclusive multi-day
-          packages.
+        <h2 className="text-4xl font-bold mb-4 uppercase">
+          {" "}
+          Start Your Journey{" "}
+        </h2>
+        <p className="mb-2">
+          Nigeria is more than cities — it’s the food, nightlife, fashion,
+          waterfalls, caves, hills, and untouched landscapes waiting to be
+          explored.
         </p>
-        <p className="mb-6">
+        <p className="mb-2">
           Hotel, daily transport, activities, and even optional visa
           facilitation—It’s all covered. Pick what suits you best.
         </p>
-
-        <a
-          href="https://calendly.com/ufotgodspower8/consult-call"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="bg-[#F5A623] text-black font-semibold px-6 py-3 rounded-full hover:bg-yellow-500 transition inline-block"
-        >
-          ENQUIRE NOW · BOOK A CALL
-        </a>
       </div>
 
       {/* Pricing Cards */}
-      <div className="grid md:grid-cols-2 gap-8 mt-12 w-full max-w-3xl max-h-[600px] overflow-y-auto px-4">
-        {/* Weekenders */}
+      <div className="grid md:grid-cols-3 gap-8 mt-12 w-full max-w-6xl px-4">
+        {/* Essential Explorer */}
         <div className="bg-white text-black rounded-md shadow-md p-6">
           <h3 className="text-center font-serif text-lg uppercase tracking-wide text-[#5C4A2D]">
-            The Weekenders
+            Essential Explorer
           </h3>
-          <p className="text-center text-sm text-gray-500">starting at</p>
-          <p className="text-center text-4xl font-bold text-[#7A2D1B] mt-2">
-            $1,500
+          <p className="text-center text-sm text-gray-500">
+            Perfect for: Solo travelers, first-timers, minimalist adventurers
+          </p>
+          <p className="text-center text-sm mt-1">Duration: 4 Days</p>
+          <p className="text-center text-4xl font-bold text-[#7A2D1B] mt-3">
+            $1,900
           </p>
 
-          <ul className="mt-6 text-center space-y-3 text-sm text-gray-700">
-            <li>2-Night Stay & 3-Day Itinerary</li>
-            <li>Daily Transportation</li>
-            <li>Food & Activities for the Weekend</li>
-            <li>Visa on Arrival Facilitation</li>
+          <ul className="mt-6 space-y-2 text-sm text-gray-700">
+            <li>✔ Airport pickup & drop-off</li>
+            <li>✔ 2 curated local experiences</li>
+            <li>✔ Daily breakfast</li>
+            <li>✔ Local guide/host</li>
+            <li>✔ Hotel accommodation</li>
+            <li>✔ Customized itinerary</li>
           </ul>
 
           <div className="flex justify-center mt-6">
-            <button className="bg-[#5C2C19] text-white py-2 px-6 rounded-full hover:bg-[#7A3B24] transition">
+            <button
+              onClick={openCalendlyPopup}
+              className="bg-[#5C2C19] text-white py-2 px-6 rounded-full hover:bg-[#7A3B24] transition"
+            >
               EXPLORE MORE
             </button>
           </div>
-
-          <p className="text-[12px] text-gray-500 mt-4 text-center">
-            All prices exclude: International Flights, Personal Shopping, Meals
-            outside designated activities, Travel Insurance
-          </p>
         </div>
 
-        {/* Full Experience */}
+        {/* Couple's Discovery */}
         <div className="bg-white text-black rounded-md shadow-md p-6">
           <h3 className="text-center font-serif text-lg uppercase tracking-wide text-[#5C4A2D]">
-            The Full Experience
+            Couple's Discovery
           </h3>
-          <p className="text-center text-sm text-gray-500">starting at</p>
-          <p className="text-center text-4xl font-bold text-[#7A2D1B] mt-2">
-            $2,400
+          <p className="text-center text-sm text-gray-500">
+            Perfect for: Honeymooners, baecations, duo adventurers
+          </p>
+          <p className="text-center text-sm mt-1">
+            Duration: 4 Days / 3 Nights
+          </p>
+          <p className="text-center text-4xl font-bold text-[#7A2D1B] mt-3">
+            $2,600
           </p>
 
-          <ul className="mt-6 text-center space-y-3 text-sm text-gray-700">
-            <li>6-Night Stay & 7-Day Itinerary</li>
-            <li>Daily Transportation</li>
-            <li>Food & Activities for the Week</li>
-            <li>Visa on Arrival Facilitation</li>
+          <ul className="mt-6 space-y-2 text-sm text-gray-700">
+            <li>✔ Private room in boutique stay</li>
+            <li>
+              ✔ Choose 3 experiences: spa, food tour, boat cruise, gallery walk,
+              night tour
+            </li>
+            <li>✔ Romantic dinner setup</li>
+            <li>✔ Local guide & concierge</li>
+            <li>✔ Photo moments + highlight reel</li>
           </ul>
 
           <div className="flex justify-center mt-6">
-            <button className="bg-[#5C2C19] text-white py-2 px-6 rounded-full hover:bg-[#7A3B24] transition">
+            <button
+              onClick={openCalendlyPopup}
+              className="bg-[#5C2C19] text-white py-2 px-6 rounded-full hover:bg-[#7A3B24] transition"
+            >
               EXPLORE MORE
             </button>
           </div>
+        </div>
 
-          <p className="text-[12px] text-gray-500 mt-4 text-center">
-            All prices exclude: International Flights, Personal Shopping, Meals
-            outside designated activities, Travel Insurance
+        {/* Group Adventure */}
+        <div className="bg-white text-black rounded-md shadow-md p-6">
+          <h3 className="text-center font-serif text-lg uppercase tracking-wide text-[#5C4A2D]">
+            Group Adventure
+          </h3>
+          <p className="text-center text-sm text-gray-500">
+            Perfect for: Friends, birthday squads, corporate teams (3–12 people)
           </p>
+          <p className="text-center text-sm mt-1">
+            Duration: 5 Days / 4 Nights
+          </p>
+          <p className="text-center text-4xl font-bold text-[#7A2D1B] mt-3">
+            $3,800
+          </p>
+
+          <ul className="mt-6 space-y-2 text-sm text-gray-700">
+            <li>✔ Private group transport (bus or SUV)</li>
+            <li>
+              ✔ Choose 3 adventures: cave hike, heritage tour, beach games,
+              cooking class
+            </li>
+            <li>✔ Event-style group dinner</li>
+            <li>✔ In-city photography & highlight reel</li>
+            <li>✔ Dedicated concierge assistant</li>
+          </ul>
+
+          <div className="flex justify-center mt-6">
+            <button
+              onClick={openCalendlyPopup}
+              className="bg-[#5C2C19] text-white py-2 px-6 rounded-full hover:bg-[#7A3B24] transition"
+            >
+              EXPLORE MORE
+            </button>
+          </div>
         </div>
       </div>
 
@@ -136,38 +178,96 @@ function PricingSection() {
 function Itinerary() {
   const itineraries = [
     {
-      title: "Tech & Culture Fusion",
-      img: "/tech-culture.jpg", // replace with actual image path
-    },
-    {
-      title: "Wellness & Design Discovery",
+      title: "Wellness & Retreats",
       img: "/wellness-design.jpg",
+      description:
+        "Rest. Reconnect. Rebirth. Need a reset? Let Nigeria’s natural tranquility restore you.",
+      signatures: [
+        "Reboot Africa Weekend – Digital detox, yoga, spa therapy.",
+        "Palm Wine & Breathwork Sessions – Guided wellness with local twists.",
+        "Zen by the Beach – Lekki private beach + sound healing escape.",
+        "Obudu Wellness Residency – immersive personal retreat.",
+      ],
     },
     {
-      title: "Cultural & Business Blend",
+      title: "Cultural Immersion",
       img: "/cultural-business.jpg",
+      description:
+        "Live the stories behind the customs. We don’t just visit communities—we sit with them, eat with them, and listen.",
+      signatures: [
+        "Igbo Village Homestay – Participate in harvest, learn native cooking.",
+        "Yoruba Orisha Tour – Spiritual traditions and ancestral storytelling.",
+        "Ijaw Fishing Festival Experience – Attend a live cultural festival.",
+      ],
+    },
+    {
+      title: "Urban Life & Night Pulse",
+      img: "/tech-culture.jpg",
+      description:
+        "Explore Nigeria’s cities like a local, not a tourist. From art crawls to street food sprees, let the city guide your senses.",
+      signatures: [
+        "Lagos Island Hop – From Lekki to Makoko, discover two sides of Lagos.",
+        "Abuja Brunch Crawl – Food, art, and rooftop vibes.",
+        "Night Pulse Tour – Exclusive nightlife experience with host + access.",
+      ],
+    },
+    {
+      title: "History & Heritage",
+      img: "/heritage.jpg",
+      description:
+        "Know where it all began. For the curious soul tracing identity, legacy, and power through Nigerian soil.",
+      signatures: [
+        "Badagry Slave Route Walkthrough – Emotional, educational, essential.",
+        "Benin Bronze Legacy Tour – Visit the home of ancient African art.",
+        "Diaspora Homecoming Program – Full heritage experience & reconnection path.",
+      ],
+    },
+    {
+      title: "Creative Encounters",
+      img: "/creative.jpg",
+      description:
+        "Feel the pulse of Nigeria’s new wave. From fashion to film, explore the frontiers of African creativity.",
+      signatures: [
+        "Lagos Art Weekend – Galleries, pop-ups, meet-the-artist dinners.",
+        "Creative Markets Tour – Discover Black-owned brands + souvenirs.",
+        "Film Location Visit (Nollywood) – Go behind the scenes.",
+        "Photography + Storytelling Workshop – Learn with local creatives.",
+      ],
+    },
+    {
+      title: "The Ndewo Life",
+      img: "/ndewo-life.jpg",
+      description:
+        "Nigeria is more than cities — it’s the food, nightlife, fashion, waterfalls, caves, hills, and untouched landscapes waiting to be explored.",
+      signatures: [
+        "Obudu Mountain Escape – Hike, cable car ride, and eco-lodge stay in Cross River.",
+        "Erin Ijesha Waterfall Trek – A 7-tier hiking experience through cascading beauty.",
+        "Awhum Cave Exploration – Spiritual adventure into ancient limestone wonders.",
+        "Lekki Conservation Kayak Ride – Mangrove trails and monkey spotting.",
+      ],
     },
   ];
 
+  const [selected, setSelected] = useState(null);
+
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-white px-6 py-12">
-      <h1 className="text-4xl font-bold text-green-900 mb-4">Our Itinerary</h1>
-      <p className="text-center text-gray-600 max-w-2xl mb-10">
-        Our itineraries are bespoke and catered to you. Here are some examples
-        of past itineraries.
+      <h1 className="text-4xl font-bold uppercase font-sans text-green-900 mb-4">
+        Our Signature experiences
+      </h1>
+      <p className="text-center text-gray-600 text-xl max-w-4xl mb-10">
+        Our itineraries are crafted to immerse you in authentic Nigerian
+        culture, nature, and lifestyle. Each experience is designed to connect
+        you deeply with the local environment and communities, ensuring a
+        memorable and transformative journey.
       </p>
 
+      {/* Cards */}
       <div className="grid md:grid-cols-3 gap-8">
         {itineraries.map((item, index) => (
           <div
             key={index}
-            className={`relative w-[300px] overflow-hidden group cursor-pointer ${
-              index === 0
-                ? "rounded-l-[20px]"
-                : index === 1
-                ? "rounded-none"
-                : "rounded-r-[20px]"
-            }`}
+            className="relative w-[350px] overflow-hidden group cursor-pointer rounded-xl shadow-lg"
           >
             {/* Image */}
             <img
@@ -177,17 +277,66 @@ function Itinerary() {
             />
 
             {/* Overlay */}
-            <div className="absolute inset-0 bg-black/40 flex flex-col items-center bottom-0 justify-center text-white">
+            <div className="absolute inset-0 bg-black/40 flex flex-col items-center justify-center text-white">
               <h2 className="text-2xl font-semibold text-center">
                 {item.title}
               </h2>
-              <button className="mt-4 px-6 py-2 bg-yellow-200 text-black rounded-full text-sm font-medium hover:bg-yellow-300 transition">
+              <button
+                onClick={() => setSelected(item)}
+                className="mt-4 px-6 py-2 bg-yellow-200 text-black rounded-full text-sm font-medium hover:bg-yellow-300 transition"
+              >
                 DISCOVER
               </button>
             </div>
           </div>
         ))}
       </div>
+
+      {/* Modal */}
+      <AnimatePresence>
+        {selected && (
+          <motion.div
+            key="overlay"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center z-50 px-4"
+          >
+            {/* Modal Box */}
+            <motion.div
+              key="modal"
+              initial={{ scale: 0.9, opacity: 0, y: 30 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              exit={{ scale: 0.9, opacity: 0, y: 30 }}
+              transition={{ duration: 0.25, ease: "easeOut" }}
+              className="bg-white rounded-2xl shadow-xl max-w-lg w-full p-6 relative"
+            >
+              {/* Modal Content */}
+              <h2 className="text-2xl font-bold text-green-900 mb-2">
+                {selected.title}
+              </h2>
+              <p className="text-gray-600 mb-4">{selected.description}</p>
+
+              <h3 className="text-lg font-semibold mb-2">
+                Signature Experiences:
+              </h3>
+              <ul className="list-disc list-inside space-y-2 text-gray-700">
+                {selected.signatures.map((sig, i) => (
+                  <li key={i}>{sig}</li>
+                ))}
+              </ul>
+            </motion.div>
+
+            {/* Close Icon (outside) */}
+            <button
+              onClick={() => setSelected(null)}
+              className="absolute top-6 right-6 text-white hover:text-yellow-200 transition"
+            >
+              <X size={32} strokeWidth={2.5} />
+            </button>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
@@ -333,17 +482,17 @@ const page = () => {
         <div
           className="absolute inset-0 bg-cover bg-center z-0"
           style={{
-            backgroundImage: `url('/path-to-your-image.jpg')`, // Replace with your actual image path
+            backgroundImage: `url('/ndewo.jpg')`, // Replace with your actual image path
           }}
         ></div>
 
         {/* Overlay */}
-        <div className="absolute inset-0 bg-black bg-opacity-50 z-10"></div>
+        <div className="absolute inset-0 bg-[#00000063] bg-opacity-50 z-10"></div>
 
         {/* Text */}
         <div className="relative z-20 flex items-center justify-center h-full">
           <h1 className="text-white text-4xl md:text-6xl font-bold text-center">
-            Lorem Ipsum
+            THE NDEWO LIFE
           </h1>
         </div>
       </header>
