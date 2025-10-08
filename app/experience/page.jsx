@@ -1,57 +1,46 @@
 "use client";
 import React from "react";
-import { useState } from "react";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
+
 function PricingSection() {
-  // Load Calendly widget script dynamically
-  useEffect(() => {
-    const script = document.createElement("script");
-    script.src = "https://assets.calendly.com/assets/external/widget.js";
-    script.async = true;
-    document.body.appendChild(script);
-
-    return () => {
-      document.body.removeChild(script);
-    };
-  }, []);
-
-  // Open Calendly popup on button click
+  // Open Calendly in new tab
   const openCalendlyPopup = () => {
-    if (window.Calendly) {
-      window.Calendly.initPopupWidget({
-        url: "https://calendly.com/faithazike/free-discovery-call-ndewo-africa", // ✅ Replace with your actual Calendly link
-      });
-    } else {
-      alert("Calendly is still loading, please try again.");
-    }
+    window.open(
+      "https://calendly.com/faithazike/free-discovery-call-ndewo-africa",
+      "_blank",
+      "noopener,noreferrer"
+    );
   };
 
   return (
     <section className="bg-[#3C4220] text-white py-16 flex flex-col items-center">
       {/* Heading */}
-      <div className="text-center max-w-2xl">
-        <h2 className="text-4xl font-bold mb-4 uppercase">
-          {" "}
-          Start Your Journey{" "}
+      <div className="text-center max-w-2xl" data-aos="fade-up">
+        <h2 className="text-4xl font-bold mb-2 uppercase">
+          Start Your Journey
         </h2>
         <p className="mb-2">
-          Nigeria is more than cities — it’s the food, nightlife, fashion,
+          Nigeria is more than cities — it's the food, nightlife, fashion,
           waterfalls, caves, hills, and untouched landscapes waiting to be
           explored.
         </p>
         <p className="mb-2">
           Hotel, daily transport, activities, and even optional visa
-          facilitation—It’s all covered. Pick what suits you best.
+          facilitation—It's all covered. Pick what suits you best.
         </p>
       </div>
 
       {/* Pricing Cards */}
       <div className="grid md:grid-cols-3 gap-8 mt-12 w-full max-w-6xl px-4">
         {/* Essential Explorer */}
-        <div className="bg-white text-black rounded-md shadow-md p-6">
-          <h3 className="text-center font-serif text-lg uppercase tracking-wide text-[#5C4A2D]">
+        <div
+          className="bg-white text-black rounded-md shadow-md p-6"
+          data-aos="fade-up"
+          data-aos-delay="100"
+        >
+          <h3 className="text-center font-bold font-serif text-lg uppercase tracking-wide text-[#5C4A2D]">
             Essential Explorer
           </h3>
           <p className="text-center text-sm text-gray-500">
@@ -82,8 +71,12 @@ function PricingSection() {
         </div>
 
         {/* Couple's Discovery */}
-        <div className="bg-white text-black rounded-md shadow-md p-6">
-          <h3 className="text-center font-serif text-lg uppercase tracking-wide text-[#5C4A2D]">
+        <div
+          className="bg-white text-black rounded-md shadow-md p-6"
+          data-aos="fade-up"
+          data-aos-delay="200"
+        >
+          <h3 className="text-center font-bold font-serif text-lg uppercase tracking-wide text-[#5C4A2D]">
             Couple's Discovery
           </h3>
           <p className="text-center text-sm text-gray-500">
@@ -118,8 +111,12 @@ function PricingSection() {
         </div>
 
         {/* Group Adventure */}
-        <div className="bg-white text-black rounded-md shadow-md p-6">
-          <h3 className="text-center font-serif text-lg uppercase tracking-wide text-[#5C4A2D]">
+        <div
+          className="bg-white text-black rounded-md shadow-md p-6"
+          data-aos="fade-up"
+          data-aos-delay="300"
+        >
+          <h3 className="text-center font-serif font-bold text-lg uppercase tracking-wide text-[#5C4A2D]">
             Group Adventure
           </h3>
           <p className="text-center text-sm text-gray-500">
@@ -155,8 +152,12 @@ function PricingSection() {
       </div>
 
       {/* Payment Options */}
-      <div className="mt-12 max-w-3xl text-center">
-        <h4 className="text-lg font-semibold mb-4">
+      <div
+        className="mt-12 max-w-3xl text-center"
+        data-aos="fade-up"
+        data-aos-delay="400"
+      >
+        <h4 className="text-lg font-semibold mb-2">
           Flexible payment options for your convenience:
         </h4>
         <p className="text-sm">
@@ -181,7 +182,7 @@ function Itinerary() {
       title: "Wellness & Retreats",
       img: "/wellness-design.jpg",
       description:
-        "Rest. Reconnect. Rebirth. Need a reset? Let Nigeria’s natural tranquility restore you.",
+        "Rest. Reconnect. Rebirth. Need a reset? Let Nigeria's natural tranquility restore you.",
       signatures: [
         "Reboot Africa Weekend – Digital detox, yoga, spa therapy.",
         "Palm Wine & Breathwork Sessions – Guided wellness with local twists.",
@@ -193,7 +194,7 @@ function Itinerary() {
       title: "Cultural Immersion",
       img: "/cultural-business.jpg",
       description:
-        "Live the stories behind the customs. We don’t just visit communities—we sit with them, eat with them, and listen.",
+        "Live the stories behind the customs. We don't just visit communities—we sit with them, eat with them, and listen.",
       signatures: [
         "Igbo Village Homestay – Participate in harvest, learn native cooking.",
         "Yoruba Orisha Tour – Spiritual traditions and ancestral storytelling.",
@@ -204,7 +205,7 @@ function Itinerary() {
       title: "Urban Life & Night Pulse",
       img: "/tech-culture.jpg",
       description:
-        "Explore Nigeria’s cities like a local, not a tourist. From art crawls to street food sprees, let the city guide your senses.",
+        "Explore Nigeria's cities like a local, not a tourist. From art crawls to street food sprees, let the city guide your senses.",
       signatures: [
         "Lagos Island Hop – From Lekki to Makoko, discover two sides of Lagos.",
         "Abuja Brunch Crawl – Food, art, and rooftop vibes.",
@@ -226,7 +227,7 @@ function Itinerary() {
       title: "Creative Encounters",
       img: "/creative.jpg",
       description:
-        "Feel the pulse of Nigeria’s new wave. From fashion to film, explore the frontiers of African creativity.",
+        "Feel the pulse of Nigeria's new wave. From fashion to film, explore the frontiers of African creativity.",
       signatures: [
         "Lagos Art Weekend – Galleries, pop-ups, meet-the-artist dinners.",
         "Creative Markets Tour – Discover Black-owned brands + souvenirs.",
@@ -238,7 +239,7 @@ function Itinerary() {
       title: "The Ndewo Life",
       img: "/ndewo-life.jpg",
       description:
-        "Nigeria is more than cities — it’s the food, nightlife, fashion, waterfalls, caves, hills, and untouched landscapes waiting to be explored.",
+        "Nigeria is more than cities — it's the food, nightlife, fashion, waterfalls, caves, hills, and untouched landscapes waiting to be explored.",
       signatures: [
         "Obudu Mountain Escape – Hike, cable car ride, and eco-lodge stay in Cross River.",
         "Erin Ijesha Waterfall Trek – A 7-tier hiking experience through cascading beauty.",
@@ -252,10 +253,17 @@ function Itinerary() {
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-white px-6 py-12">
-      <h1 className="text-4xl font-bold uppercase font-sans text-green-900 mb-4">
+      <h1
+        className="text-4xl font-bold text-center uppercase font-sans text-green-900 mb-2"
+        data-aos="fade-up"
+      >
         Our Signature experiences
       </h1>
-      <p className="text-center text-gray-600 text-xl max-w-4xl mb-10">
+      <p
+        className="text-center text-gray-600 text-sm lg:text-xl max-w-4xl mb-10"
+        data-aos="fade-up"
+        data-aos-delay="100"
+      >
         Our itineraries are crafted to immerse you in authentic Nigerian
         culture, nature, and lifestyle. Each experience is designed to connect
         you deeply with the local environment and communities, ensuring a
@@ -268,6 +276,8 @@ function Itinerary() {
           <div
             key={index}
             className="relative w-[350px] overflow-hidden group cursor-pointer rounded-xl shadow-lg"
+            data-aos="fade-up"
+            data-aos-delay={index * 100}
           >
             {/* Image */}
             <img
@@ -283,7 +293,7 @@ function Itinerary() {
               </h2>
               <button
                 onClick={() => setSelected(item)}
-                className="mt-4 px-6 py-2 bg-yellow-200 text-black rounded-full text-sm font-medium hover:bg-yellow-300 transition"
+                className="mt-4 px-6 py-2 bg-yellow-800 text-green rounded-full text-sm font-medium hover:bg-yellow-300 transition"
               >
                 DISCOVER
               </button>
@@ -300,40 +310,67 @@ function Itinerary() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center z-50 px-4"
+            onClick={() => setSelected(null)}
+            className="fixed inset-0 bg-black/60 backdrop-blur-md flex items-center justify-center z-50 px-4 py-8"
           >
             {/* Modal Box */}
             <motion.div
               key="modal"
-              initial={{ scale: 0.9, opacity: 0, y: 30 }}
-              animate={{ scale: 1, opacity: 1, y: 0 }}
-              exit={{ scale: 0.9, opacity: 0, y: 30 }}
-              transition={{ duration: 0.25, ease: "easeOut" }}
-              className="bg-white rounded-2xl shadow-xl max-w-lg w-full p-6 relative"
+              initial={{ x: 100, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              exit={{ x: 100, opacity: 0 }}
+              transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
+              onClick={(e) => e.stopPropagation()}
+              className="bg-white h-[550px] lg:h-[650px] rounded-3xl shadow-2xl max-w-5xl w-full overflow-hidden relative grid md:grid-cols-2 overflow-y-auto"
             >
-              {/* Modal Content */}
-              <h2 className="text-2xl font-bold text-green-900 mb-2">
-                {selected.title}
-              </h2>
-              <p className="text-gray-600 mb-4">{selected.description}</p>
+              {/* Left Side - Image */}
+              <div className="relative h-64 md:h-auto">
+                <img
+                  src={selected.img}
+                  alt={selected.title}
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent to-white/10"></div>
+              </div>
 
-              <h3 className="text-lg font-semibold mb-2">
-                Signature Experiences:
-              </h3>
-              <ul className="list-disc list-inside space-y-2 text-gray-700">
-                {selected.signatures.map((sig, i) => (
-                  <li key={i}>{sig}</li>
-                ))}
-              </ul>
+              {/* Right Side - Content */}
+              <div className="p-8 md:p-10 flex flex-col justify-between  max-h-[70vh]">
+                <div>
+                  <h2 className="text-3xl md:text-4xl font-bold text-[#2D5016] mb-2 leading-tight">
+                    {selected.title}
+                  </h2>
+                  <p className="text-[#5C4A2D] text-base leading-relaxed mb-6">
+                    {selected.description}
+                  </p>
+
+                  <div className="border-t border-[#E5DCC3] pt-6">
+                    <h3 className="text-lg font-bold text-[#2D5016] mb-2 tracking-wide">
+                      SIGNATURE EXPERIENCES
+                    </h3>
+                    <ul className="space-y-3">
+                      {selected.signatures.map((sig, i) => (
+                        <li key={i} className="flex items-start group">
+                          <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#7A2D1B] mt-2 mr-3 flex-shrink-0 group-hover:scale-125 transition-transform"></span>
+                          <span className="text-[#5C4A2D] text-sm leading-relaxed">
+                            {sig}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+
+                {/* Close Button - Bottom Right */}
+              </div>
+
+              {/* Close Icon - Top Right */}
+              <button
+                onClick={() => setSelected(null)}
+                className="absolute top-4 right-4 text-[#2D5016] hover:text-[#7A2D1B] transition-colors bg-white rounded-full p-2 shadow-lg hover:shadow-xl z-10"
+              >
+                <X size={24} strokeWidth={2.5} />
+              </button>
             </motion.div>
-
-            {/* Close Icon (outside) */}
-            <button
-              onClick={() => setSelected(null)}
-              className="absolute top-6 right-6 text-white hover:text-yellow-200 transition"
-            >
-              <X size={32} strokeWidth={2.5} />
-            </button>
           </motion.div>
         )}
       </AnimatePresence>
@@ -384,24 +421,6 @@ const faqData = [
   },
 ];
 
-// Framer Motion animation variants
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { staggerChildren: 0.15 },
-  },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.5, ease: "easeOut" },
-  },
-};
-
 function FAQ() {
   const [openIndex, setOpenIndex] = useState(null);
 
@@ -412,31 +431,21 @@ function FAQ() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-amber-900 via-amber-800 to-amber-900 py-16 px-4">
       <div className="max-w-4xl mx-auto">
-        {/* Title with a small slide animation */}
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, ease: "easeOut" }}
-          className="text-center mb-12"
-        >
+        {/* Title */}
+        <div className="text-center mb-12" data-aos="fade-up">
           <h1 className="text-5xl md:text-6xl font-light text-amber-100 tracking-wide">
             FAQ
           </h1>
-        </motion.div>
+        </div>
 
-        {/* FAQ List with staggered animation */}
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
-          className="space-y-4"
-        >
+        {/* FAQ List */}
+        <div className="space-y-4">
           {faqData.map((faq, index) => (
-            <motion.div
+            <div
               key={index}
-              variants={itemVariants}
               className="bg-amber-100/10 backdrop-blur-sm rounded-lg overflow-hidden shadow-md transition-transform hover:scale-[1.02]"
+              data-aos="fade-up"
+              data-aos-delay={index * 50}
             >
               {/* Question */}
               <button
@@ -451,7 +460,7 @@ function FAQ() {
                 </span>
               </button>
 
-              {/* Answer with smooth height animation */}
+              {/* Answer */}
               <motion.div
                 initial={false}
                 animate={
@@ -466,23 +475,50 @@ function FAQ() {
                   {faq.answer}
                 </p>
               </motion.div>
-            </motion.div>
+            </div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </div>
   );
 }
 
-const page = () => {
+const Page = () => {
+  useEffect(() => {
+    // Initialize AOS from CDN
+    const script = document.createElement("script");
+    script.src = "https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js";
+    script.async = true;
+    script.onload = () => {
+      if (window.AOS) {
+        window.AOS.init({
+          duration: 1000,
+          once: true,
+          easing: "ease-out",
+        });
+      }
+    };
+    document.body.appendChild(script);
+
+    // Add smooth scroll behavior
+    document.documentElement.style.scrollBehavior = "smooth";
+
+    return () => {
+      document.documentElement.style.scrollBehavior = "auto";
+      if (script.parentNode) {
+        script.parentNode.removeChild(script);
+      }
+    };
+  }, []);
+
   return (
-    <div>
+    <div className="overflow-x-hidden">
       <header className="relative w-full h-[60vh] md:h-[80vh]">
         {/* Background Image */}
         <div
           className="absolute inset-0 bg-cover bg-center z-0"
           style={{
-            backgroundImage: `url('/ndewo.jpg')`, // Replace with your actual image path
+            backgroundImage: `url('/ndewo.jpg')`,
           }}
         ></div>
 
@@ -491,7 +527,10 @@ const page = () => {
 
         {/* Text */}
         <div className="relative z-20 flex items-center justify-center h-full">
-          <h1 className="text-white text-4xl md:text-6xl font-bold text-center">
+          <h1
+            className="text-white text-4xl md:text-6xl font-bold text-center"
+            data-aos="zoom-in"
+          >
             THE NDEWO LIFE
           </h1>
         </div>
@@ -500,8 +539,14 @@ const page = () => {
       <PricingSection />
       <Itinerary />
       <FAQ />
+
+      {/* AOS CSS */}
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+      />
     </div>
   );
 };
 
-export default page;
+export default Page;
