@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
-
+import Image from "next/image";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -24,12 +24,19 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="relative w-full px-5 bg-black text-white md:bg-transparent md:text-black z-50">
-        <div className="flex justify-between items-center px-4 py-4 md:py-6">
-          <div className="text-2xl font-bold">Ndewo</div>
+      <nav className="relative w-full px-5 bg-black text-white md:bg-[#FDFAF2] md:text-black z-50">
+        <div className="flex justify-between items-center px-4 py-4 md:py-3">
+          <div className="text-2xl font-bold">
+            <Image
+              src="/logo.png"
+              width={500}
+              height={500}
+              className="w-[100px] h-auto"
+            />
+          </div>
 
           {/* Desktop Menu */}
-          <ul className="hidden md:flex space-x-8 items-center">
+          <ul className="hidden md:flex  font-medium text-xl space-x-8 items-center">
             <li>
               <a href="/" className="hover:underline cursor-pointer">
                 Home
@@ -45,15 +52,10 @@ const Navbar = () => {
                 Our Vision
               </a>
             </li>
-            <li>
-              <a href="#" className="hover:underline cursor-pointer">
-                Catalogue
-              </a>
-            </li>
           </ul>
 
           {/* Enroll Button (Desktop) */}
-          <button className="hidden md:block bg-white text-black border border-orange-500 rounded-full px-5 py-2 hover:bg-orange-100 transition-colors duration-300">
+          <button className="hidden md:block bg-[#5a2f1f] ] text-white border  rounded-full px-5 py-2  transition-colors duration-300">
             ENROLL NOW
           </button>
 
@@ -96,7 +98,7 @@ const Navbar = () => {
               <a
                 href="/"
                 onClick={() => setIsOpen(false)}
-                className="text-white text-4xl font-light hover:text-yellow-300 transition-colors duration-300"
+                className="text-white text-4xl font-light  transition-colors duration-300"
               >
                 Home
               </a>
@@ -112,7 +114,7 @@ const Navbar = () => {
               <a
                 href="/experience"
                 onClick={() => setIsOpen(false)}
-                className="text-white text-4xl font-light hover:text-yellow-300 transition-colors duration-300"
+                className="text-white text-4xl font-light  transition-colors duration-300"
               >
                 The Ndewo Experience
               </a>
@@ -128,7 +130,7 @@ const Navbar = () => {
               <a
                 href="/vision"
                 onClick={() => setIsOpen(false)}
-                className="text-white text-4xl font-light hover:text-yellow-300 transition-colors duration-300"
+                className="text-white text-4xl font-light  transition-colors duration-300"
               >
                 Our Vision
               </a>
@@ -144,7 +146,7 @@ const Navbar = () => {
               <a
                 href="#"
                 onClick={() => setIsOpen(false)}
-                className="text-white text-4xl font-light hover:text-yellow-300 transition-colors duration-300"
+                className="text-white text-4xl font-light  transition-colors duration-300"
               >
                 Catalogue
               </a>
@@ -157,7 +159,7 @@ const Navbar = () => {
               }`}
               style={{ transitionDelay: isOpen ? "500ms" : "0ms" }}
             >
-              <button className="bg-white text-[#3C4220] px-8 py-4 rounded-full text-xl font-semibold w-full max-w-xs hover:bg-yellow-300 hover:scale-105 transition-all duration-300 shadow-lg">
+              <button className="bg-[#5a2f1f]  text-white px-8 py-4 rounded-full text-xl font-semibold w-full max-w-xs  hover:scale-105 transition-all duration-300">
                 ENROLL NOW
               </button>
             </li>
@@ -167,7 +169,7 @@ const Navbar = () => {
         {/* Close Button in Menu */}
         <button
           onClick={toggleMenu}
-          className="absolute top-6 right-6 text-white focus:outline-none hover:text-yellow-300 transition-colors duration-300"
+          className="absolute top-6 right-6 text-white focus:outline-none  transition-colors duration-300"
         >
           <X size={36} strokeWidth={2} />
         </button>

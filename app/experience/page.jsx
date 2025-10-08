@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
 import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
 
 function PricingSection() {
@@ -15,163 +14,386 @@ function PricingSection() {
   };
 
   return (
-    <section className="bg-[#3C4220] text-white py-16 flex flex-col items-center">
+    <section className="bg-[#f6edda] text-[#5a2f1f] py-16 flex flex-col items-center">
       {/* Heading */}
       <div className="text-center max-w-2xl" data-aos="fade-up">
-        <h2 className="text-4xl font-bold mb-2 uppercase">
+        <h2 className="text-4xl  font-clash font-bold mb-2 uppercase">
           Start Your Journey
         </h2>
-        <p className="mb-2">
+        <p className="mb-2 font-exodus">
           Nigeria is more than cities — it's the food, nightlife, fashion,
           waterfalls, caves, hills, and untouched landscapes waiting to be
           explored.
         </p>
-        <p className="mb-2">
+        <p className="mb-2 font-exodus">
           Hotel, daily transport, activities, and even optional visa
           facilitation—It's all covered. Pick what suits you best.
         </p>
       </div>
 
       {/* Pricing Cards */}
-      <div className="grid md:grid-cols-3 gap-8 mt-12 w-full max-w-6xl px-4">
+      <div className="grid md:grid-cols-3 gap-6 mt-12 w-full max-w-6xl px-4">
         {/* Essential Explorer */}
         <div
-          className="bg-white text-black rounded-md shadow-md p-6"
-          data-aos="fade-up"
+          className="bg-white text-black rounded-2xl shadow-lg p-8 border border-gray-200 hover:shadow-2xl transition-shadow duration-300"
+          data-aos="fade-right"
           data-aos-delay="100"
+          data-aos-duration="800"
         >
-          <h3 className="text-center font-bold font-serif text-lg uppercase tracking-wide text-[#5C4A2D]">
-            Essential Explorer
-          </h3>
-          <p className="text-center text-sm text-gray-500">
+          <div className="text-left mb-6">
+            <h3 className="text-sm font-semibold text-gray-600 uppercase tracking-wide mb-2">
+              Essential Explorer
+            </h3>
+            <div className="flex items-baseline gap-1">
+              <span className="text-5xl font-bold text-[#5C4A2D]">$1,900</span>
+              <span className="text-gray-500 text-sm">/trip</span>
+            </div>
+          </div>
+
+          <p className="text-sm text-gray-600 mb-6">
             Perfect for: Solo travelers, first-timers, minimalist adventurers
           </p>
-          <p className="text-center text-sm mt-1">Duration: 4 Days</p>
-          <p className="text-center text-4xl font-bold text-[#7A2D1B] mt-3">
-            $1,900
-          </p>
+          <p className="text-sm text-gray-500 mb-6">Duration: 4 Days</p>
 
-          <ul className="mt-6 space-y-2 text-sm text-gray-700">
-            <li>✔ Airport pickup & drop-off</li>
-            <li>✔ 2 curated local experiences</li>
-            <li>✔ Daily breakfast</li>
-            <li>✔ Local guide/host</li>
-            <li>✔ Hotel accommodation</li>
-            <li>✔ Customized itinerary</li>
+          <ul className="space-y-3 mb-8">
+            <li className="flex items-start text-sm text-gray-700">
+              <svg
+                className="w-5 h-5 text-[#5a2f1f] mr-3 flex-shrink-0 mt-0.5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2.5"
+                  d="M5 13l4 4L19 7"
+                ></path>
+              </svg>
+              Airport pickup & drop-off
+            </li>
+            <li className="flex items-start text-sm text-gray-700">
+              <svg
+                className="w-5 h-5 text-[#5a2f1f] mr-3 flex-shrink-0 mt-0.5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2.5"
+                  d="M5 13l4 4L19 7"
+                ></path>
+              </svg>
+              2 curated local experiences
+            </li>
+            <li className="flex items-start text-sm text-gray-700">
+              <svg
+                className="w-5 h-5 text-[#5a2f1f] mr-3 flex-shrink-0 mt-0.5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2.5"
+                  d="M5 13l4 4L19 7"
+                ></path>
+              </svg>
+              Daily breakfast
+            </li>
+            <li className="flex items-start text-sm text-gray-700">
+              <svg
+                className="w-5 h-5 text-[#5a2f1f] mr-3 flex-shrink-0 mt-0.5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2.5"
+                  d="M5 13l4 4L19 7"
+                ></path>
+              </svg>
+              Local guide/host
+            </li>
+            <li className="flex items-start text-sm text-gray-700">
+              <svg
+                className="w-5 h-5 text-[#5a2f1f] mr-3 flex-shrink-0 mt-0.5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2.5"
+                  d="M5 13l4 4L19 7"
+                ></path>
+              </svg>
+              Hotel accommodation
+            </li>
+            <li className="flex items-start text-sm text-gray-700">
+              <svg
+                className="w-5 h-5 text-[#5a2f1f] mr-3 flex-shrink-0 mt-0.5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2.5"
+                  d="M5 13l4 4L19 7"
+                ></path>
+              </svg>
+              Customized itinerary
+            </li>
           </ul>
 
-          <div className="flex justify-center mt-6">
-            <button
-              onClick={openCalendlyPopup}
-              className="bg-[#5C2C19] text-white py-2 px-6 rounded-full hover:bg-[#7A3B24] transition"
-            >
-              EXPLORE MORE
-            </button>
-          </div>
+          <button
+            onClick={openCalendlyPopup}
+            className="w-full bg-[#5a2f1f] text-white py-3 px-6 rounded-lg font-medium hover:bg-[#5a2f1f] transition-colors duration-200"
+          >
+            EXPLORE MORE
+          </button>
         </div>
 
         {/* Couple's Discovery */}
         <div
-          className="bg-white text-black rounded-md shadow-md p-6"
-          data-aos="fade-up"
-          data-aos-delay="200"
-        >
-          <h3 className="text-center font-bold font-serif text-lg uppercase tracking-wide text-[#5C4A2D]">
-            Couple's Discovery
-          </h3>
-          <p className="text-center text-sm text-gray-500">
-            Perfect for: Honeymooners, baecations, duo adventurers
-          </p>
-          <p className="text-center text-sm mt-1">
-            Duration: 4 Days / 3 Nights
-          </p>
-          <p className="text-center text-4xl font-bold text-[#7A2D1B] mt-3">
-            $2,600
-          </p>
-
-          <ul className="mt-6 space-y-2 text-sm text-gray-700">
-            <li>✔ Private room in boutique stay</li>
-            <li>
-              ✔ Choose 3 experiences: spa, food tour, boat cruise, gallery walk,
-              night tour
-            </li>
-            <li>✔ Romantic dinner setup</li>
-            <li>✔ Local guide & concierge</li>
-            <li>✔ Photo moments + highlight reel</li>
-          </ul>
-
-          <div className="flex justify-center mt-6">
-            <button
-              onClick={openCalendlyPopup}
-              className="bg-[#5C2C19] text-white py-2 px-6 rounded-full hover:bg-[#7A3B24] transition"
-            >
-              EXPLORE MORE
-            </button>
-          </div>
-        </div>
-
-        {/* Group Adventure */}
-        <div
-          className="bg-white text-black rounded-md shadow-md p-6"
+          className="bg-white text-black rounded-2xl shadow-lg p-8 border border-gray-200 hover:shadow-2xl transition-shadow duration-300"
           data-aos="fade-up"
           data-aos-delay="300"
+          data-aos-duration="800"
         >
-          <h3 className="text-center font-serif font-bold text-lg uppercase tracking-wide text-[#5C4A2D]">
-            Group Adventure
-          </h3>
-          <p className="text-center text-sm text-gray-500">
-            Perfect for: Friends, birthday squads, corporate teams (3–12 people)
+          <div className="text-left mb-6">
+            <h3 className="text-sm font-semibold text-gray-600 uppercase tracking-wide mb-2">
+              Couple's Discovery
+            </h3>
+            <div className="flex items-baseline gap-1">
+              <span className="text-5xl font-bold text-[#5C4A2D]">$2,600</span>
+              <span className="text-gray-500 text-sm">/trip</span>
+            </div>
+          </div>
+
+          <p className="text-sm text-gray-600 mb-6">
+            Perfect for: Honeymooners, baecations, duo adventurers
           </p>
-          <p className="text-center text-sm mt-1">
-            Duration: 5 Days / 4 Nights
-          </p>
-          <p className="text-center text-4xl font-bold text-[#7A2D1B] mt-3">
-            $3,800
+          <p className="text-sm text-gray-500 mb-6">
+            Duration: 4 Days / 3 Nights
           </p>
 
-          <ul className="mt-6 space-y-2 text-sm text-gray-700">
-            <li>✔ Private group transport (bus or SUV)</li>
-            <li>
-              ✔ Choose 3 adventures: cave hike, heritage tour, beach games,
-              cooking class
+          <ul className="space-y-3 mb-8">
+            <li className="flex items-start text-sm text-gray-700">
+              <svg
+                className="w-5 h-5 text-[#5a2f1f] mr-3 flex-shrink-0 mt-0.5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2.5"
+                  d="M5 13l4 4L19 7"
+                ></path>
+              </svg>
+              Private room in boutique stay
             </li>
-            <li>✔ Event-style group dinner</li>
-            <li>✔ In-city photography & highlight reel</li>
-            <li>✔ Dedicated concierge assistant</li>
+            <li className="flex items-start text-sm text-gray-700">
+              <svg
+                className="w-5 h-5 text-[#5a2f1f] mr-3 flex-shrink-0 mt-0.5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2.5"
+                  d="M5 13l4 4L19 7"
+                ></path>
+              </svg>
+              Choose 3 experiences: spa, food tour, boat cruise, gallery walk,
+              night tour
+            </li>
+            <li className="flex items-start text-sm text-gray-700">
+              <svg
+                className="w-5 h-5 text-[#5a2f1f] mr-3 flex-shrink-0 mt-0.5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2.5"
+                  d="M5 13l4 4L19 7"
+                ></path>
+              </svg>
+              Romantic dinner setup
+            </li>
+            <li className="flex items-start text-sm text-gray-700">
+              <svg
+                className="w-5 h-5 text-[#5a2f1f] mr-3 flex-shrink-0 mt-0.5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2.5"
+                  d="M5 13l4 4L19 7"
+                ></path>
+              </svg>
+              Local guide & concierge
+            </li>
+            <li className="flex items-start text-sm text-gray-700">
+              <svg
+                className="w-5 h-5 text-[#5a2f1f] mr-3 flex-shrink-0 mt-0.5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2.5"
+                  d="M5 13l4 4L19 7"
+                ></path>
+              </svg>
+              Photo moments + highlight reel
+            </li>
           </ul>
 
-          <div className="flex justify-center mt-6">
-            <button
-              onClick={openCalendlyPopup}
-              className="bg-[#5C2C19] text-white py-2 px-6 rounded-full hover:bg-[#7A3B24] transition"
-            >
-              EXPLORE MORE
-            </button>
+          <button
+            onClick={openCalendlyPopup}
+            className="w-full bg-[#5a2f1f] text-white py-3 px-6 rounded-lg font-medium hover:bg-[#5a2f1f] transition-colors duration-200"
+          >
+            EXPLORE MORE
+          </button>
+        </div>
+
+        {/* Group Adventure - Featured */}
+        <div
+          className="bg-[#5a2f1f] text-white rounded-2xl shadow-2xl p-8 border-2 border-[#5a2f1f] hover:shadow-3xl transition-all duration-300 transform hover:scale-105"
+          data-aos="fade-left"
+          data-aos-delay="500"
+          data-aos-duration="800"
+        >
+          <div className="text-left mb-6">
+            <h3 className="text-sm font-semibold text-white uppercase tracking-wide mb-2">
+              Group Adventure
+            </h3>
+            <div className="flex items-baseline gap-1">
+              <span className="text-5xl font-bold text-white">$3,800</span>
+              <span className="text-white text-sm">/trip</span>
+            </div>
           </div>
+
+          <p className="text-sm text-blue-100 mb-6">
+            Perfect for: Friends, birthday squads, corporate teams (3–12 people)
+          </p>
+          <p className="text-sm text-white mb-6">Duration: 5 Days / 4 Nights</p>
+
+          <ul className="space-y-3 mb-8">
+            <li className="flex items-start text-sm text-white">
+              <svg
+                className="w-5 h-5 text-white mr-3 flex-shrink-0 mt-0.5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2.5"
+                  d="M5 13l4 4L19 7"
+                ></path>
+              </svg>
+              Private group transport (bus or SUV)
+            </li>
+            <li className="flex items-start text-sm text-white">
+              <svg
+                className="w-5 h-5 text-white mr-3 flex-shrink-0 mt-0.5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2.5"
+                  d="M5 13l4 4L19 7"
+                ></path>
+              </svg>
+              Choose 3 adventures: cave hike, heritage tour, beach games,
+              cooking class
+            </li>
+            <li className="flex items-start text-sm text-white">
+              <svg
+                className="w-5 h-5 text-white mr-3 flex-shrink-0 mt-0.5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2.5"
+                  d="M5 13l4 4L19 7"
+                ></path>
+              </svg>
+              Event-style group dinner
+            </li>
+            <li className="flex items-start text-sm text-white">
+              <svg
+                className="w-5 h-5 text-white mr-3 flex-shrink-0 mt-0.5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2.5"
+                  d="M5 13l4 4L19 7"
+                ></path>
+              </svg>
+              In-city photography & highlight reel
+            </li>
+            <li className="flex items-start text-sm text-white">
+              <svg
+                className="w-5 h-5 text-white mr-3 flex-shrink-0 mt-0.5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2.5"
+                  d="M5 13l4 4L19 7"
+                ></path>
+              </svg>
+              Dedicated concierge assistant
+            </li>
+          </ul>
+
+          <button
+            onClick={openCalendlyPopup}
+            className="w-full bg-white text-[#5a2f1f] py-3 px-6 rounded-lg font-medium hover:bg-blue-50 transition-colors duration-200"
+          >
+            EXPLORE MORE
+          </button>
         </div>
       </div>
 
       {/* Payment Options */}
-      <div
-        className="mt-12 max-w-3xl text-center"
-        data-aos="fade-up"
-        data-aos-delay="400"
-      >
-        <h4 className="text-lg font-semibold mb-2">
-          Flexible payment options for your convenience:
-        </h4>
-        <p className="text-sm">
-          <span className="text-yellow-300 font-semibold">
-            ● One-time Payment:
-          </span>{" "}
-          Pay in full and enjoy a hassle-free countdown to your journey <br />
-          <span className="text-yellow-300 font-semibold">
-            ● Installment Plan:
-          </span>{" "}
-          Pay a 30% deposit to secure your booking, followed by 2 equal monthly
-          payments
-        </p>
-      </div>
     </section>
   );
 }
@@ -254,7 +476,7 @@ function Itinerary() {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-white px-6 py-12">
       <h1
-        className="text-4xl font-bold text-center uppercase font-sans text-green-900 mb-2"
+        className="text-4xl font-clash font-bold text-center uppercase text-green-900 mb-2"
         data-aos="fade-up"
       >
         Our Signature experiences
@@ -288,12 +510,12 @@ function Itinerary() {
 
             {/* Overlay */}
             <div className="absolute inset-0 bg-black/40 flex flex-col items-center justify-center text-white">
-              <h2 className="text-2xl font-semibold text-center">
+              <h2 className="text-2xl font-clash font-semibold text-center">
                 {item.title}
               </h2>
               <button
                 onClick={() => setSelected(item)}
-                className="mt-4 px-6 py-2 bg-yellow-800 text-green rounded-full text-sm font-medium hover:bg-yellow-300 transition"
+                className="mt-4 px-6 py-2 bg-yellow-800 text-green rounded-full text-sm font-medium text-white transition"
               >
                 DISCOVER
               </button>
@@ -303,121 +525,132 @@ function Itinerary() {
       </div>
 
       {/* Modal */}
-      <AnimatePresence>
-        {selected && (
-          <motion.div
-            key="overlay"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            onClick={() => setSelected(null)}
-            className="fixed inset-0 bg-black/60 backdrop-blur-md flex items-center justify-center z-50 px-4 py-8"
+      {selected && (
+        <div
+          className="fixed inset-0 bg-black/60 backdrop-blur-md flex items-center justify-center z-50 px-4 py-8"
+          onClick={() => setSelected(null)}
+          data-aos="fade"
+          data-aos-duration="300"
+        >
+          {/* Modal Box */}
+          <div
+            className="bg-white h-[550px] lg:h-[650px] rounded-3xl shadow-2xl max-w-5xl w-full overflow-hidden relative grid md:grid-cols-2 overflow-y-auto"
+            onClick={(e) => e.stopPropagation()}
+            data-aos="slide-left"
+            data-aos-duration="400"
           >
-            {/* Modal Box */}
-            <motion.div
-              key="modal"
-              initial={{ x: 100, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              exit={{ x: 100, opacity: 0 }}
-              transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
-              onClick={(e) => e.stopPropagation()}
-              className="bg-white h-[550px] lg:h-[650px] rounded-3xl shadow-2xl max-w-5xl w-full overflow-hidden relative grid md:grid-cols-2 overflow-y-auto"
-            >
-              {/* Left Side - Image */}
-              <div className="relative h-64 md:h-auto">
-                <img
-                  src={selected.img}
-                  alt={selected.title}
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent to-white/10"></div>
-              </div>
+            {/* Left Side - Image */}
+            <div className="relative h-64 md:h-auto">
+              <img
+                src={selected.img}
+                alt={selected.title}
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent to-white/10"></div>
+            </div>
 
-              {/* Right Side - Content */}
-              <div className="p-8 md:p-10 flex flex-col justify-between  max-h-[70vh]">
-                <div>
-                  <h2 className="text-3xl md:text-4xl font-bold text-[#2D5016] mb-2 leading-tight">
-                    {selected.title}
-                  </h2>
-                  <p className="text-[#5C4A2D] text-base leading-relaxed mb-6">
-                    {selected.description}
-                  </p>
+            {/* Right Side - Content */}
+            <div className="p-8 md:p-10  font-clash flex flex-col justify-between max-h-[70vh]">
+              <div>
+                <h2 className="text-3xl  md:text-4xl font-bold text-[#2D5016] mb-2 leading-tight">
+                  {selected.title}
+                </h2>
+                <p className="text-[#5C4A2D] text-base leading-relaxed mb-6">
+                  {selected.description}
+                </p>
 
-                  <div className="border-t border-[#E5DCC3] pt-6">
-                    <h3 className="text-lg font-bold text-[#2D5016] mb-2 tracking-wide">
-                      SIGNATURE EXPERIENCES
-                    </h3>
-                    <ul className="space-y-3">
-                      {selected.signatures.map((sig, i) => (
-                        <li key={i} className="flex items-start group">
-                          <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#7A2D1B] mt-2 mr-3 flex-shrink-0 group-hover:scale-125 transition-transform"></span>
-                          <span className="text-[#5C4A2D] text-sm leading-relaxed">
-                            {sig}
-                          </span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+                <div className="border-t border-[#E5DCC3] pt-6">
+                  <h3 className="text-lg font-bold text-[#2D5016] mb-2 tracking-wide">
+                    SIGNATURE EXPERIENCES
+                  </h3>
+                  <ul className="space-y-3">
+                    {selected.signatures.map((sig, i) => (
+                      <li key={i} className="flex items-start group">
+                        <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#7A2D1B] mt-2 mr-3 flex-shrink-0 group-hover:scale-125 transition-transform"></span>
+                        <span className="text-[#5C4A2D] text-sm leading-relaxed">
+                          {sig}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-
-                {/* Close Button - Bottom Right */}
               </div>
+            </div>
 
-              {/* Close Icon - Top Right */}
-              <button
-                onClick={() => setSelected(null)}
-                className="absolute top-4 right-4 text-[#2D5016] hover:text-[#7A2D1B] transition-colors bg-white rounded-full p-2 shadow-lg hover:shadow-xl z-10"
-              >
-                <X size={24} strokeWidth={2.5} />
-              </button>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+            {/* Close Icon - Top Right */}
+            <button
+              onClick={() => setSelected(null)}
+              className="absolute top-4 right-4 text-[#2D5016] hover:text-[#7A2D1B] transition-colors bg-white rounded-full p-2 shadow-lg hover:shadow-xl z-10"
+            >
+              <X size={24} strokeWidth={2.5} />
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
 
 const faqData = [
   {
-    question: "What is Kääbö?",
+    question: "What is Ndewo Africa?",
     answer:
-      "Kääbö is a travel consulting and concierge service that curates unique and personalized experiences in Nigeria. We specialize in creating immersive itineraries that showcase the best of Nigerian culture, landscapes, and leisure, while also offering premium services such as tailored travel packages, private tours, and networking opportunities. Whether you're looking for a cultural adventure, a business retreat, or a bespoke getaway, Kääbö ensures a seamless experience from start to finish.",
+      "Ndewo Africa is a curated travel and experience company that helps visitors and locals explore Nigeria with ease. From itineraries to tour guides, accommodation, and cultural experiences, we make sure your journey is seamless, memorable, and stress-free.",
   },
   {
-    question: "What sets Kääbö apart?",
+    question: "Who can use Ndewo Africa's services?",
     answer:
-      "Kääbö stands out through our deep local expertise, personalized approach, and commitment to authentic Nigerian experiences. We offer exclusive access to hidden gems, cultural immersion opportunities, and premium concierge services that you won't find elsewhere. Our team of local experts ensures every detail is perfectly curated to match your preferences and interests.",
+      "Our services are perfect for first-time visitors coming to Nigeria, locals who want to explore different Nigerian states, and groups, solo travelers, and families looking for curated and safe experiences.",
   },
   {
-    question: "What's included in your 7-day program?",
+    question: "What kind of experiences do you offer?",
     answer:
-      "Our 7-day program includes accommodation in premium locations, guided cultural tours, authentic dining experiences, transportation, networking events with local entrepreneurs, visits to historical sites, art galleries, and markets. You'll also receive a dedicated concierge service, welcome package, and 24/7 support throughout your journey.",
+      "We create tailored experiences that include cultural tours (festivals, heritage sites, food tours), city experiences (nightlife, shopping, urban explorations), nature and adventure trips (beaches, hiking, waterfalls), and luxury and relaxation packages.",
   },
   {
-    question: "What's NOT included in the program?",
+    question: "Is it safe to travel with Ndewo Africa?",
     answer:
-      "International flights to Nigeria, personal shopping expenses, alcoholic beverages (unless specified), travel insurance, visa processing fees, and any activities outside the planned itinerary are not included. Optional premium add-ons and personal expenses during free time are also excluded.",
+      "Yes. Your safety is our top priority. We partner with trusted guides, verified drivers, and secure accommodations. We also design itineraries with both safety and comfort in mind.",
   },
   {
-    question: "How is the pricing structured?",
+    question: "Do you help with visas and travel documents?",
     answer:
-      "Our pricing is tiered based on group size, accommodation level, and customization requirements. We offer Standard, Premium, and Luxury packages. Pricing includes all mentioned services with transparent breakdown provided upon inquiry. Group discounts and early bird rates are available for advance bookings.",
+      "Yes. We provide guidance on visa applications, entry requirements, and essential travel documents to ensure your arrival in Nigeria is stress-free.",
   },
   {
-    question: "How do I enroll in a program?",
+    question: "Can locals in Nigeria book experiences too?",
     answer:
-      "Enrollment is simple: contact us through our website or phone, complete a brief consultation to understand your preferences, receive a customized proposal, confirm with a deposit, and we'll handle all arrangements. Our team will guide you through each step and provide pre-travel preparation materials.",
+      "Absolutely. We curate experiences for Nigerians who want to explore new cities, hidden gems, or plan a unique getaway within the country.",
   },
   {
-    question: "What payment methods do you accept?",
+    question: "Do you customize trips?",
     answer:
-      "We accept major credit cards (Visa, MasterCard, American Express), bank transfers, PayPal, and mobile money transfers. Payment plans are available with 50% deposit required to secure booking and remaining balance due 30 days before travel. All transactions are secure and encrypted.",
+      "Yes. Every traveler is unique. We create personalized itineraries to match your interests—whether cultural, adventurous, luxurious, or a mix of everything.",
   },
   {
-    question: "What is the deposit policy?",
+    question: "What's included in a typical package?",
     answer:
-      "A 50% deposit is required to confirm your booking and secure your spot. The deposit is non-refundable but can be transferred to future dates with 60 days notice. Full payment is due 30 days before your travel date. We offer flexible payment plans for bookings made more than 90 days in advance.",
+      "Depending on the package, you can expect accommodation arrangements, transportation (airport pick-up/drop-off, local transfers), curated itineraries, guided tours and cultural experiences, and 24/7 local support during your stay.",
+  },
+  {
+    question: "How do I book an experience with Ndewo Africa?",
+    answer:
+      "Booking is simple. You can reach out via our website, email, or WhatsApp. We'll schedule a quick call to understand your needs, then create a tailored package for you.",
+  },
+  {
+    question: "What if I need to cancel or reschedule?",
+    answer:
+      "We understand that plans change. Our cancellation and rescheduling policies are flexible, depending on the package. We'll work with you to adjust your experience wherever possible.",
+  },
+  {
+    question: "Do you offer group discounts?",
+    answer:
+      "Yes. We provide special packages and discounts for groups, whether for corporate retreats, family trips, or friend getaways.",
+  },
+  {
+    question: "Why should I choose Ndewo Africa over planning my trip myself?",
+    answer:
+      "We remove the stress of planning, negotiating, and navigating Nigeria alone. With our insider knowledge, trusted partners, and curated itineraries, you enjoy the best of Nigeria without the hassle.",
   },
 ];
 
@@ -461,20 +694,19 @@ function FAQ() {
               </button>
 
               {/* Answer */}
-              <motion.div
-                initial={false}
-                animate={
+              <div
+                className={`overflow-hidden transition-all duration-400 ease-in-out ${
                   openIndex === index
-                    ? { height: "auto", opacity: 1 }
-                    : { height: 0, opacity: 0 }
-                }
-                transition={{ duration: 0.4, ease: "easeInOut" }}
-                className="overflow-hidden px-6"
+                    ? "max-h-96 opacity-100"
+                    : "max-h-0 opacity-0"
+                }`}
               >
-                <p className="text-amber-200/90 leading-relaxed text-base py-4">
-                  {faq.answer}
-                </p>
-              </motion.div>
+                <div className="px-6 py-4">
+                  <p className="text-amber-200/90 leading-relaxed text-base">
+                    {faq.answer}
+                  </p>
+                </div>
+              </div>
             </div>
           ))}
         </div>
@@ -512,7 +744,7 @@ const Page = () => {
   }, []);
 
   return (
-    <div className="overflow-x-hidden">
+    <div className="overflow-x-hidden font-exodus">
       <header className="relative w-full h-[60vh] md:h-[80vh]">
         {/* Background Image */}
         <div
@@ -528,7 +760,7 @@ const Page = () => {
         {/* Text */}
         <div className="relative z-20 flex items-center justify-center h-full">
           <h1
-            className="text-white text-4xl md:text-6xl font-bold text-center"
+            className="text-white font-clash text-4xl md:text-6xl font-bold text-center"
             data-aos="zoom-in"
           >
             THE NDEWO LIFE

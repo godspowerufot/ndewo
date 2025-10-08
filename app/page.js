@@ -4,7 +4,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import PastExperiences from "./component/ui/pastexperience";
-
+import Image from "next/image";
 const ContactForm = () => {
   const [formData, setFormData] = useState({
     fullName: "",
@@ -47,9 +47,9 @@ const ContactForm = () => {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
         viewport={{ once: true }}
-        className="relative z-10 p-8 my-8 bg-white h-fit md:p-12  backdrop-blur-md text-black rounded-xl max-w-3xl w-full mx-4 shadow-xl"
+        className="relative z-10 p-6 my-8 bg-white h-fit md:p-12  backdrop-blur-md text-black rounded-none max-w-3xl w-full mx-4 "
       >
-        <h1 className="text-4xl md:text-5xl font-serif mb-4 text-center text-[#2e2f1f] drop-shadow-sm">
+        <h1 className="text-4xl md:text-5xl font-clash  mb-4 text-center text-[#2e2f1f] ">
           Start Your Journey
         </h1>
         <p className="text-lg mb-8 text-center text-gray-700">
@@ -72,7 +72,7 @@ const ContactForm = () => {
               value={formData.fullName}
               onChange={handleChange}
               placeholder="Enter your full name"
-              className="w-full p-4 text-lg bg-white border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-600 shadow-sm transition-all"
+              className="w-full p-4 text-lg bg-white border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#5a2f1f]  shadow-sm transition-all"
               required
             />
           </div>
@@ -92,7 +92,7 @@ const ContactForm = () => {
               value={formData.email}
               onChange={handleChange}
               placeholder="Enter your email"
-              className="w-full p-4 text-lg bg-white border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-600 shadow-sm transition-all"
+              className="w-full p-4 text-lg bg-white border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#5a2f1f]  shadow-sm transition-all"
               required
             />
           </div>
@@ -112,7 +112,7 @@ const ContactForm = () => {
               onChange={handleChange}
               placeholder="Write your message..."
               rows="6"
-              className="w-full p-4 text-lg bg-white border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-600 shadow-sm transition-all resize-y"
+              className="w-full p-4 text-lg bg-white border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#5a2f1f]  shadow-sm transition-all resize-y"
               required
             ></textarea>
           </div>
@@ -122,7 +122,7 @@ const ContactForm = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             type="submit"
-            className="w-full bg-yellow-700 text-white hover:bg-green-800 font-semibold py-4 px-6 rounded-md text-lg shadow-md transition-all"
+            className="w-full bg-[#5a2f1f] ] text-white  font-semibold py-4 px-6  text-lg  transition-all"
           >
             Send Message
           </motion.button>
@@ -136,7 +136,7 @@ export default function Home() {
   return (
     <>
       <main>
-        <header className="relative w-full h-[60vh] md:h-[80vh]">
+        <header className="relative w-full font-clash h-[60vh] md:h-screen">
           {/* Background Image */}
           <div
             className="absolute inset-0 bg-cover bg-center z-0"
@@ -149,12 +149,12 @@ export default function Home() {
           <div className="absolute inset-0 bg-[#00000063] bg-opacity-50 z-10"></div>
 
           {/* Text */}
-          <div className="relative z-20 flex items-center justify-center flex-col h-full">
+          <div className="relative   z-20 flex items-center justify-center flex-col h-full">
             <motion.h1
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ duration: 1, ease: "easeOut" }}
-              className="text-white text-4xl md:text-8xl font-bold text-center"
+              className="text-white  font-clash md:-mt-[8rem] md:max-w-5xl text-4xl md:text-8xl font-bold text-center"
             >
               Welcome to Ndewo Africa
             </motion.h1>
@@ -163,7 +163,7 @@ export default function Home() {
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ duration: 1, ease: "easeOut", delay: 0.3 }}
-              className="text-white text-2xl md:text-3xl mt-4 text-center"
+              className="text-white font-[family-name:var(--font-exodus)] text-2xl md:text-3xl mt-4 text-center"
             >
               Your Gateway to Authentic African Experience
             </motion.h2>
@@ -172,24 +172,16 @@ export default function Home() {
 
         {/* herpotext */}
 
-        <section className="bg-white py-16 px-4 md:px-20 text-center text-[#343616]">
-          <div className="text-center px-6">
-            <motion.h1
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-              viewport={{ once: true }}
-              className="text-4xl md:text-6xl font-serif font-medium mb-6"
-            >
-              Ndewo Africa
-            </motion.h1>
+        <section className="bg-white py-16 flex gap-6 px-4 md:px-20 flex-col justify-center items-center w-full text-center text-[#343616]">
+          <Image src="/logo-2.png" alt="logo" width={200} height={200} />
 
+          <div className="text-center px-6">
             <motion.p
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
               viewport={{ once: true }}
-              className="max-w-3xl mx-auto mb-6 text-lg md:text-xl"
+              className="max-w-3xl font-exodus mx-auto mb-6 text-lg md:text-xl"
             >
               <strong>A</strong>, modern travel concierge and cultural immersion
               brand rooted in authenticity, local connection, and unforgettable
@@ -201,7 +193,7 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
               viewport={{ once: true }}
-              className="max-w-3xl mx-auto mb-6 text-base md:text-lg"
+              className="max-w-3xl font-[family-name:var(--font-exodus)] mx-auto mb-6 text-base md:text-lg"
             >
               Whether you&apos;re exploring for the first time or returning to
               reconnect, we design experiences that bring you closer to the

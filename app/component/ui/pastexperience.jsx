@@ -59,7 +59,7 @@ const PastExperiences = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           viewport={{ once: true }}
-          className="text-4xl md:text-5xl font-serif font-semibold text-center"
+          className="text-4xl  font-clash md:text-5xl  font-semibold text-center"
         >
           Past Experiences
         </motion.h2>
@@ -70,16 +70,16 @@ const PastExperiences = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
           viewport={{ once: true }}
-          className="max-w-2xl mx-auto text-center italic text-lg space-y-4"
+          className="max-w-2xl mx-auto  font-exodus text-center italic text-lg space-y-4"
         >
           <p>
-            &quot;My experience with Káàbò was transformative to say the least.
+            &quot;My experience with ndewo was transformative to say the least.
             Every day was a new adventure – we met the most inspiring
             entrepreneurs, I learned about so many different sectors...&quot;
           </p>
           <p>
             &quot;...and of course I can’t leave out how much amazing Nigerian
-            food we ate. Káàbò bridges the gap between business and cultural
+            food we ate. ndewo bridges the gap between business and cultural
             exploration, making it a must for anyone...&quot;
           </p>
         </motion.div>
