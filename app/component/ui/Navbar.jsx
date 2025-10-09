@@ -3,6 +3,8 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import Image from "next/image";
+import { handleClientScriptLoad } from "next/script";
+import { openCalendlyPopup } from "@/lib/page";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -38,24 +40,36 @@ const Navbar = () => {
           {/* Desktop Menu */}
           <ul className="hidden md:flex  font-medium text-xl space-x-8 items-center">
             <li>
-              <a href="/" className="hover:underline cursor-pointer">
+              <a
+                href="/"
+                className="hover:underline cursor-pointer hover:scale-110 transition-transform duration-300 inline-block"
+              >
                 Home
               </a>
             </li>
             <li>
-              <a href="/experience" className="hover:underline cursor-pointer">
+              <a
+                href="/experience"
+                className="hover:underline cursor-pointer hover:scale-110 transition-transform duration-300 inline-block"
+              >
                 The Ndewo Experience
               </a>
             </li>
             <li>
-              <a href="/vision" className="hover:underline cursor-pointer">
+              <a
+                href="/vision"
+                className="hover:underline cursor-pointer hover:scale-110 transition-transform duration-300 inline-block"
+              >
                 Our Vision
               </a>
             </li>
           </ul>
 
           {/* Enroll Button (Desktop) */}
-          <button className="hidden md:block bg-[#5a2f1f] ] text-white border  rounded-full px-5 py-2  transition-colors duration-300">
+          <button
+            onClick={openCalendlyPopup}
+            className="hidden md:block bg-[#5a2f1f] ] text-white border  rounded-full px-5 py-2  transition-colors duration-300"
+          >
             ENROLL NOW
           </button>
 
@@ -135,22 +149,7 @@ const Navbar = () => {
                 Our Vision
               </a>
             </li>
-            <li
-              className={`transition-all duration-700 ${
-                isOpen
-                  ? "opacity-100 translate-x-0"
-                  : "opacity-0 -translate-x-10"
-              }`}
-              style={{ transitionDelay: isOpen ? "400ms" : "0ms" }}
-            >
-              <a
-                href="#"
-                onClick={() => setIsOpen(false)}
-                className="text-white text-4xl font-light  transition-colors duration-300"
-              >
-                Catalogue
-              </a>
-            </li>
+
             <li
               className={`transition-all duration-700 mt-8 ${
                 isOpen
@@ -159,7 +158,10 @@ const Navbar = () => {
               }`}
               style={{ transitionDelay: isOpen ? "500ms" : "0ms" }}
             >
-              <button className="bg-[#5a2f1f]  text-white px-8 py-4 rounded-full text-xl font-semibold w-full max-w-xs  hover:scale-105 transition-all duration-300">
+              <button
+                onClick={openCalendlyPopup}
+                className="bg-[#5a2f1f]  text-white px-8 py-4 rounded-full text-xl font-semibold w-full max-w-xs  hover:scale-105 transition-all duration-300"
+              >
                 ENROLL NOW
               </button>
             </li>

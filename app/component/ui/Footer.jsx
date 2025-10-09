@@ -2,7 +2,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="bg-[#1a1a1a] text-white px-6 pt-16">
+    <footer className="bg-[#1a1a1a] text-white px-6 h-full pt-16">
       <div className="max-w-7xl mx-auto">
         {/* Main Footer Content */}
         <div className="grid md:grid-cols-2 gap-12 pb-12 border-b border-gray-700">
@@ -17,7 +17,7 @@ const Footer = () => {
           </div>
 
           {/* Right Column: Links & Contact */}
-          <div className="grid grid-cols-2 gap-8">
+          <div className="grid grid-cols-2 gap-8 h-full">
             {/* Quick Links */}
             <div data-aos="fade-up" data-aos-delay="100">
               <h4 className="text-lg font-semibold mb-4 text-white">
@@ -86,7 +86,7 @@ const Footer = () => {
           data-aos-delay="300"
         >
           <p className="text-sm text-gray-500">
-            © {new Date().getFullYear()} Káàbò. All rights reserved.
+            © {new Date().getFullYear()} Ndewo. All rights reserved.
           </p>
         </div>
       </div>

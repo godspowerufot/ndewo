@@ -2,21 +2,14 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { X } from "lucide-react";
-
+import { openCalendlyPopup } from "@/lib/page";
 function PricingSection() {
   // Open Calendly in new tab
-  const openCalendlyPopup = () => {
-    window.open(
-      "https://calendly.com/faithazike/free-discovery-call-ndewo-africa",
-      "_blank",
-      "noopener,noreferrer"
-    );
-  };
 
   return (
     <section className="bg-[#f6edda] text-[#5a2f1f] py-16 flex flex-col items-center">
       {/* Heading */}
-      <div className="text-center max-w-2xl" data-aos="fade-up">
+      <div className="text-center  px-3 md:px-0 max-w-2xl" data-aos="fade-up">
         <h2 className="text-4xl  font-clash font-bold mb-2 uppercase">
           Start Your Journey
         </h2>
@@ -476,7 +469,7 @@ function Itinerary() {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-white px-6 py-12">
       <h1
-        className="text-4xl font-clash font-bold text-center uppercase text-green-900 mb-2"
+        className="text-4xl font-clash font-bold text-center uppercase text-yellow-800 mb-2"
         data-aos="fade-up"
       >
         Our Signature experiences
@@ -534,7 +527,7 @@ function Itinerary() {
         >
           {/* Modal Box */}
           <div
-            className="bg-white h-[550px] lg:h-[650px] rounded-3xl shadow-2xl max-w-5xl w-full overflow-hidden relative grid md:grid-cols-2 overflow-y-auto"
+            className="bg-white h-[550px] lg:h-[650px] rounded-3xl shadow-2xl max-w-5xl w-full md:overflow-y-hidden relative grid md:grid-cols-2 overflow-y-auto"
             onClick={(e) => e.stopPropagation()}
             data-aos="slide-left"
             data-aos-duration="400"
@@ -552,7 +545,7 @@ function Itinerary() {
             {/* Right Side - Content */}
             <div className="p-8 md:p-10  font-clash flex flex-col justify-between max-h-[70vh]">
               <div>
-                <h2 className="text-3xl  md:text-4xl font-bold text-[#2D5016] mb-2 leading-tight">
+                <h2 className="text-3xl  md:text-4xl font-bold text-yellow-800 mb-2 leading-tight">
                   {selected.title}
                 </h2>
                 <p className="text-[#5C4A2D] text-base leading-relaxed mb-6">
@@ -560,7 +553,7 @@ function Itinerary() {
                 </p>
 
                 <div className="border-t border-[#E5DCC3] pt-6">
-                  <h3 className="text-lg font-bold text-[#2D5016] mb-2 tracking-wide">
+                  <h3 className="text-lg font-bold text-yellow-800 mb-2 tracking-wide">
                     SIGNATURE EXPERIENCES
                   </h3>
                   <ul className="space-y-3">

@@ -3,8 +3,64 @@
 :root {
   --background: #ffffff;
   --font-tropiline: "Tropiline", sans-serif;
-  --font-exodus:"EudoxusSans",sans-serif;
+  --font-Exodus:"Eudoxus Sans"
   --foreground: #171717;
+}
+/* =======================
+   TROPILINE FONT
+======================= */
+@font-face {
+  font-family: "Tropiline";
+  src: url("/fonts/tropiline-font-family/Tropiline-Regular.otf")
+    format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Tropiline";
+  src: url("/fonts/tropiline-font-family/Tropiline-Semibold.otf")
+    format("opentype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Tropiline";
+  src: url("/fonts/tropiline-font-family/Tropiline-Black.otf")
+    format("opentype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* =======================
+   EXODUS FONT
+======================= */
+@font-face {
+  font-family: "Eudoxus Sans";
+  src: url("/fonts/EudoxusSans-Regular-BF659b6cb1d4714.ttf")
+    format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Eudoxus Sans";
+  src: url("/fonts/EudoxusSans-Bold-BF659b6cb1408e5.ttf")
+    format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* =======================
+   FONT CLASSES
+======================= */
+.font-tropiline {
+  font-family: "Tropiline", sans-serif;
+}
+
+.font-exodus {
+  font-family: "Eudoxus Sans", sans-serif;
 }
 
 @theme {
@@ -20,6 +76,5 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-exodus);
   scroll-behavior: smooth;
 }
