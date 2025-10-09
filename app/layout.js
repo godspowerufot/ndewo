@@ -14,12 +14,17 @@ const geistSans = Geist({
 const tropiline = localFont({
   src: [
     {
-      path: "./fonts/tropiline-font-family/Tropiline-Semibold.otf",
+      path: "/fonts/tropiline-font-family/Tropiline-Black.otf",
+      weight: "700",
+      style: "normal",
+    },
+    {
+      path: "/fonts/tropiline-font-family/Tropiline-Semibold.otf",
       weight: "600",
       style: "normal",
     },
     {
-      path: "./fonts/tropiline-font-family/Tropiline-Regular.otf",
+      path: "/fonts/tropiline-font-family/Tropiline-Regular.otf",
       weight: "400",
       style: "normal",
     },
@@ -31,7 +36,12 @@ const tropiline = localFont({
 const exodus = localFont({
   src: [
     {
-      path: "./fonts/EudoxusSans-Regular-BF659b6cb1d4714.ttf",
+      path: "/fonts/EudoxusSans-Bold-BF659b6cb1408e5.ttf",
+      weight: "700",
+      style: "normal",
+    },
+    {
+      path: "/fonts/EudoxusSans-Regular-BF659b6cb1d4714.ttf",
       weight: "400",
       style: "normal",
     },
