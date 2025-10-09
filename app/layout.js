@@ -1,10 +1,11 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist } from "next/font/google";
 import "./globals.css";
 import Navbar from "./component/ui/Navbar";
 import Footer from "./component/ui/Footer";
 import Script from "next/script";
 import { AOSInit } from "@/lib/page";
 import localFont from "next/font/local";
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -13,17 +14,17 @@ const geistSans = Geist({
 const tropiline = localFont({
   src: [
     {
-      path: "./fonts/tropiline-font-family/Tropiline-Black.otf",
+      path: "/fonts/tropiline-font-family/Tropiline-Black.otf",
       weight: "700",
       style: "normal",
     },
     {
-      path: "./fonts/tropiline-font-family/Tropiline-Semibold.otf",
+      path: "/fonts/tropiline-font-family/Tropiline-Semibold.otf",
       weight: "600",
       style: "normal",
     },
     {
-      path: "./fonts/tropiline-font-family/Tropiline-Regular.otf",
+      path: "/fonts/tropiline-font-family/Tropiline-Regular.otf",
       weight: "400",
       style: "normal",
     },
@@ -35,13 +36,12 @@ const tropiline = localFont({
 const exodus = localFont({
   src: [
     {
-      path: "./fonts/EudoxusSans-Bold-BF659b6cb1408e5.ttf",
+      path: "/fonts/EudoxusSans-Bold-BF659b6cb1408e5.ttf",
       weight: "700",
       style: "normal",
     },
-
     {
-      path: "./fonts/EudoxusSans-Regular-BF659b6cb1d4714.ttf",
+      path: "/fonts/EudoxusSans-Regular-BF659b6cb1d4714.ttf",
       weight: "400",
       style: "normal",
     },
@@ -60,7 +60,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${tropiline.variable} ${exodus.variable}`}>
       <Script src="https://assets.calendly.com/assets/external/widget.js" />
-      <body className={`$${exodus.className}`}>
+      <body className={exodus.className}>
         <AOSInit />
         <Navbar />
         {children}
