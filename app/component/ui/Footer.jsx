@@ -17,7 +17,7 @@ const Footer = () => {
           </div>
 
           {/* Right Column: Links & Contact */}
-          <div className="grid grid-cols-2 gap-8 h-full">
+          <div className="grid grid-cols-2 gap-8">
             {/* Quick Links */}
             <div data-aos="fade-up" data-aos-delay="100">
               <h4 className="text-lg font-semibold mb-4 text-white">
@@ -80,11 +80,7 @@ const Footer = () => {
         </div>
 
         {/* Bottom Section: Copyright */}
-        <div
-          className="pt-8 text-center"
-          data-aos="fade-up"
-          data-aos-delay="300"
-        >
+        <div className="pt-8 text-center">
           <p className="text-sm text-gray-500">
             © {new Date().getFullYear()} Ndewo. All rights reserved.
           </p>
