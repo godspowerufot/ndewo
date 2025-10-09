@@ -13,7 +13,7 @@ const geistSans = Geist({
 const tropiline = localFont({
   src: [
     {
-      path: "../public/fonts/tropiline-font-family/Tropiline-bold.otf",
+      path: "../public/fonts/tropiline-font-family/Tropiline-Black.otf",
       weight: "700",
       style: "normal",
     },
