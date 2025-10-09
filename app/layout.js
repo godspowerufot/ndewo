@@ -53,7 +53,7 @@ const exodus = localFont({
 export const metadata = {
   title: "Ndewo",
   description:
-    "modern travel concierge and cultural immersion brand rooted in authenticity, local connection, and unforgettable discovery.",
+    "Ndewo Africa is a curated travel and experience company that helps visitors and locals explore Nigeria with ease. From itineraries to tour guides, accommodation, and cultural experiences, we make sure your journey is seamless, memorable, and stress-free.",
 };
 
 export default function RootLayout({ children }) {
